@@ -1,28 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../css/styles.css';
 
-class Header extends Component {
-
-        state = {
-         
-            title: 'The keywords are: ',
-            keywords: ''
-        }
+const Header = (props) => {
     
-
-
-    inputChangeHandler = (e) =>{
-        // console.log(e.target.value)
-
-        this.setState({
-          
-            keywords: e.target.value
-        })
-    }
-
-    render(){
-        console.log(this.state.keywords)
         return (
             <header>
                <div 
@@ -30,14 +11,13 @@ class Header extends Component {
             
                 >Logo</div>
                <input type="text" 
-               onChange={this.inputChangeHandler}/>  
+                onChange={props.keywords}
+                />  
 
-                <div>{this.state.title}</div>
-                <div>{this.state.keywords}</div>
+          
             </header>
        )
     }
-}
 
   
 
